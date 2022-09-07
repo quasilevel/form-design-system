@@ -1,43 +1,46 @@
 <html>
   <head>
     <title>Sample form</title>
-    <link rel="stylesheet" href="./css/form.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" rel="stylesheet"> 
   </head>
   <body>
     <h1 class="form-name">Form Name</h1>
     <form action="#" id="sample">
 
       <div id="name" class="form-input-group">
-        <label for="name-input">Name</label>
-        <input placeholder="Enter your full name" type="text" name="name" id="name-input">
-        <div class="error-text">Your name is required</div>
+        <label class="label-text" for="name-input">Name</label><br>
+        &gt; <input placeholder="Enter your full name" type="text" name="name" id="name-input">
+        <div class="error-text ">Your name is required</div>
       </div>
 
       <div id="age" class="form-input-group invalid">
-        <label for="age-input">Age</label>
-        <input placeholder="Enter your age" type="text" name="age" id="age-input">
+        <label class="label-text"  for="age-input">Age</label><br>
+        &gt; <input placeholder="Enter your age" type="text" name="age" id="age-input">
         <div class="error-text">Age should be a number</div>
       </div>
 
       <div id="email" class="form-input-group invalid">
-        <label for="email-input">Email</label>
-        <input placeholder="Enter your email" type="text" name="email" id="email-input">
+        <label class="label-text"  for="email-input">Email</label><br>
+        &gt; <input placeholder="Enter your email" type="text" name="email" id="email-input">
         <div class="error-text">Email is not valid</div>
       </div>
 
       <div id="github" class="form-input-group">
-        <label for="github-input">Github</label>
-        <input placeholder="Enter your Github User URL" type="text" name="github" id="github-input">
+        <label class="label-text"  for="github-input">Github</label><br>
+        &gt; <input placeholder="Enter your Github User URL" type="text" name="github" id="github-input">
         <div class="error-text">The github user doesn't exist</div>
       </div>
 
       <div id="gender" class="form-input-group">
-        <label for="gender-input">Gender</label>
+        <label class="label-text"  for="gender-input">Gender</label><br>
         <div class="option-group">
           <input type="radio" name="gender" id="gender-male" value="male">
-          <label for="gender-male">Male</label>
+          <label for="gender-male">Male</label><br>
           <input type="radio" name="gender" id="gender-female" value="female">
-          <label for="gender-female">Female</label>
+          <label for="gender-female">Female</label><br>
         </div>
         <div class="error-text">Choose a gender</div>
       </div>
@@ -45,33 +48,33 @@
       <hr class="separator">
 
       <div id="morality" class="form-input-group invalid">
-        <label for="morality-input">Morality</label>
+        <label  class="label-text" for="morality-input">Morality</label><br>
         <div class="option-group">
           <input type="radio" name="morality" id="morality-good" value="good">
-          <label for="morality-male">Good</label>
+          <label for="morality-male">Good</label><br>
           <input type="radio" name="morality" id="morality-evil" value="evil">
-          <label for="morality-female">Evil</label>
+          <label for="morality-female">Evil</label><br>
         </div>
         <div class="error-text">You can't morally grey</div>
       </div>
 
       <div id="languages" class="form-input-group">
-        <label for="languages-input">Languages</label>
+        <label class="label-text" for="languages-input">Languages</label><br>
         <div class="option-group">
           <input type="checkbox" name="languages" id="languages-golang" value="golang">
-          <label for="languages-golang">Golang</label>
+          <label for="languages-golang">Golang</label><br>
           <input type="checkbox" name="languages" id="languages-javascript" value="javascript">
-          <label for="languages-javascript">Javascript</label>
+          <label for="languages-javascript">Javascript</label><br>
           <input type="checkbox" name="languages" id="languages-typescript" value="typescript">
-          <label for="languages-typescript">Typescript</label>
+          <label for="languages-typescript">Typescript</label><br>
           <input type="checkbox" name="languages" id="languages-kotlin" value="kotlin">
-          <label for="languages-kotlin">Kotlin</label>
+          <label for="languages-kotlin">Kotlin</label><br>
         </div>
         <div class="error-text">Choose at least one language</div>
       </div>
 
       <div id="submit" class="form-input-group">
-        <input type="submit" value="Submit">
+      <input type="submit" value="Submit">
       </div>
 
     </form>

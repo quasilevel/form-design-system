@@ -1,0 +1,53 @@
+*{font-family: 'Fira Code', monospace;}
+.form-name{
+    font-size: 20px;
+    margin: 50px 0 20px 140px;
+}
+form{
+    margin: 0 0 0 140px;
+}
+.error-text{
+    margin-bottom: 30px;
+}
+input {
+    border: 0;
+}
+#submit input{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 20px;
+}
+.form-input-group label{
+    font-weight: 400;
+}
+.separator {
+    border-bottom: 2px dotted;
+}
+input[type=text]{
+    outline: none;
+}
+.label-text::before {
+    content: '[';
+}    
+.label-text::after {
+    content: ']';
+}
+.error-text::before {
+    content: '? ';
+}    
+.error-text{color:red;}
+.error-text{display: none;}
+.invalid > .error-text {
+    display: block;
+  }
+  .error-text{
+    margin-bottom: 20px;
+  }
+  .form-input-group {
+    margin-bottom: 50px
+  }
+  .invalid{
+    margin-bottom: 50px;
+  }
