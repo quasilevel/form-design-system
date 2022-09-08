@@ -65,10 +65,18 @@ export const init = () => {
   })
 }
 
-export const validate = (name, ...validators) => {
+export const validator = (...revalidateOn) => (name, ...validators) => {
   validityMap.set(name, validators)
   const input = document.querySelector(`#${name} input[type=text]`)
   input?.addEventListener("blur", async () => await runValidators(name, ...validators))
+
+
+  // bad code, but something to get us started
+  revalidateOn.map(event => {
+    document.querySelectorAll(`#${name} input`).forEach(input => {
+      input.addEventListener(event, async () => await runValidators(name, ...validators))
+    })
+  })
 }
 
 export const required = (message) => async (value) => {
