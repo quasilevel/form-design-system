@@ -15,6 +15,8 @@
   --label-text-size: calc(var(--input-text-size) * (12 / 16));
   --submit-pad-h: calc(var(--input-text-size));
   --submit-pad-v: calc(var(--input-text-size) * (12 / 16));
+  
+  --red: #F67171;
 }
 
 .form-name, form {
@@ -70,4 +72,19 @@ form {
 input[type=submit] {
   width: fit-content;
   padding: var(--submit-pad-v) var(--submit-pad-h);
+}
+
+.error-text {
+  color: var(--red);
+  display: none;
+}
+
+.error-text::before {
+  content: "?";
+  margin-right: var(--gap-min);
+  color: currentcolor;
+}
+
+.form-input-group.invalid .error-text {
+  display: block;
 }
