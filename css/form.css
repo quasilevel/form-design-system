@@ -22,8 +22,16 @@
   font-weight: normal;
 }
 
+.form-name {
+  font-size: var(--form-name-size);
+}
+
 input {
   appearance: none;
+}
+
+.option-group > label, input, .error-text {
+  font-size: var(--input-text-size);
 }
 
 .separator {
@@ -35,9 +43,20 @@ input {
 form {
   display: flex;
   flex-direction: column;
+  gap: var(--gap-max);
 }
 
 .form-input-group {
   display: flex;
   flex-direction: column;
+  gap: var(--gap-min);
+}
+
+.form-input-group > label {
+  font-size: var(--label-text-size);
+}
+
+input[type=submit] {
+  width: fit-content;
+  padding: var(--submit-pad-v) var(--submit-pad-h);
 }
