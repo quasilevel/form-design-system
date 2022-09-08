@@ -31,7 +31,7 @@
         <div class="error-text">Your name is required</div>
       </div>
 
-      <div id="age" class="form-input-group invalid">
+      <div id="age" class="form-input-group">
         <label for="age-input">Age</label>
         <span class="text-input">
           <input placeholder="Enter your age" type="text" name="age" id="age-input">
@@ -39,7 +39,7 @@
         <div class="error-text">Age should be a number</div>
       </div>
 
-      <div id="email" class="form-input-group invalid">
+      <div id="email" class="form-input-group">
         <label for="email-input">Email</label>
         <span class="text-input">
           <input placeholder="Enter your email" type="text" name="email" id="email-input">
@@ -68,7 +68,7 @@
 
       <hr class="separator">
 
-      <div id="morality" class="form-input-group invalid">
+      <div id="morality" class="form-input-group">
         <label for="morality-input">Morality</label>
         <div class="option-group">
           <input type="radio" name="morality" id="morality-good" value="good">
@@ -99,5 +99,13 @@
       </div>
 
     </form>
+    <script type="module">
+      import { init, validate, required } from "./js/modules/forms.js"
+      init()
+
+      const requiredFields = ["name", "age", "email", "github", "morality", "languages"]
+      
+      requiredFields.map(data => validate(data, required))
+    </script>
   </body>
 </html>
