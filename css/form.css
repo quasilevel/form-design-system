@@ -18,6 +18,7 @@
   
   --red: #F67171;
   --grey: #BCBCBC;
+  --grey-text: #575757;
   --black: #000000;
 }
 
@@ -125,4 +126,22 @@ input[type=submit] {
 
 .form-input-group.invalid .option-group > input::after {
   color: var(--red);
+}
+
+input[type=text] {
+  border: none;
+  outline: none;
+}
+
+input[type=text]:focus {
+  outline: none;
+}
+
+input[type=text]::placeholder {
+  color: var(--grey-text);
+}
+
+input[type=text]::after {
+  content: ">";
+  margin-right: var(--gap-min);
 }
