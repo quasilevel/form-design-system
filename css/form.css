@@ -17,6 +17,8 @@
   --submit-pad-v: calc(var(--input-text-size) * (12 / 16));
   
   --red: #F67171;
+  --grey: #BCBCBC;
+  --black: #000000;
 }
 
 .form-name, form {
@@ -87,4 +89,40 @@ input[type=submit] {
 
 .form-input-group.invalid .error-text {
   display: block;
+}
+
+.option-group {
+  display: grid;
+  grid-template-columns: min-content auto;
+  gap: var(--gap-min);
+}
+
+.option-group > input {
+  margin: 0px;
+}
+
+.option-group > label {
+  cursor: pointer;
+}
+
+.option-group > input::after {
+  content: "|";
+  color: var(--grey);
+  display: inline-block;
+  width: 0.58em;
+  transform: translateY(-2px); /* tested on firefox */
+  text-align: center;
+}
+
+.option-group > input.hover::after {
+  color: var(--black);
+}
+
+.option-group > input:checked::after {
+  content: ">";
+  color: var(--black);
+}
+
+.form-input-group.invalid .option-group > input::after {
+  color: var(--red);
 }
