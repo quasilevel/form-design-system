@@ -57,6 +57,16 @@ form {
   font-size: var(--label-text-size);
 }
 
+.form-input-group > label::after {
+  content: "]";
+  margin-left: var(--gap-min);
+}
+
+.form-input-group > label::before {
+  content: "[";
+  margin-right: var(--gap-min);
+}
+
 input[type=submit] {
   width: fit-content;
   padding: var(--submit-pad-v) var(--submit-pad-h);
