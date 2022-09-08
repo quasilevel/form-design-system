@@ -105,8 +105,21 @@
 
       const validate = validator("change", "keyup")
 
-      const requiredFields = ["name", "age", "email", "github", "gender", "morality", "languages"]
+      const requiredFields = ["name", "github", "gender", "morality", "languages"]
       requiredFields.map(data => validate(data, required(`${data.charAt(0).toUpperCase() + data.slice(1)} is required`)))
+
+      validate("age", required("Age is required"), async value => {
+        if (Number.isNaN(Number(value))) {
+          throw new Error("Age is should be a number")
+        }
+      })
+
+      validate("email", required("Email is required"), async value => {
+        const mailformat = /^[A-Za-z\d\.]+\@[A-Za-z]+\.[a-z]{2,3}$/
+        if (!mailformat.test(value)) {
+          throw new Error("Please enter a valid email")
+        }
+      })
     </script>
   </body>
 </html>
