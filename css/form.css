@@ -1,0 +1,7 @@
+.form-name, form {
+  font-family: "Fira Code", monospace;
+}
+
+input {
+  appearance: none;
+}
