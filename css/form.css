@@ -5,3 +5,9 @@
 input {
   appearance: none;
 }
+
+.separator {
+  color: #BCBCBC;
+  border: none;
+  border-bottom: 2px dashed #BCBCBC;
+}
