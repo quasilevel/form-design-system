@@ -169,6 +169,10 @@ input[type=text]::placeholder {
   color: var(--grey-text);
 }
 
+.invalid .text-input::before {
+  color: var(--red);
+}
+
 .text-input::before {
   content: ">";
 }
