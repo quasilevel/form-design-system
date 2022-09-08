@@ -38,6 +38,7 @@ input {
   color: #BCBCBC;
   border: none;
   border-bottom: 2px dashed #BCBCBC;
+  width: 100%;
 }
 
 form {
