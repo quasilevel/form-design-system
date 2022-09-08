@@ -19,7 +19,8 @@
   --red: #F67171;
   --grey: #BCBCBC;
   --grey-text: #575757;
-  --black: #000000;
+  --fg: #000000;
+  --bg: #FFFFFF;
 }
 
 .form-name, form {
@@ -35,7 +36,7 @@ input {
   appearance: none;
 }
 
-.option-group > label, input, .error-text {
+.option-group > label, input, .error-text, button[type=submit] {
   font-size: var(--input-text-size);
 }
 
@@ -72,9 +73,35 @@ form {
   margin-right: var(--gap-min);
 }
 
-input[type=submit] {
+button[type=submit] {
   width: fit-content;
   padding: var(--submit-pad-v) var(--submit-pad-h);
+  margin: 0px;
+  box-sizing: border-box;
+  color: var(--bg);
+  background: var(--fg);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+}
+
+button[type=submit]:hover::after {
+  opacity: 1;
+}
+
+button[type=submit]::after {
+  content: "";
+  --size: 6px;
+  width: var(--size);
+  height: var(--size);
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, calc(100% + 0.3em));
+  background: var(--fg);
+  border-radius: 50%;
+  opacity: 0;
 }
 
 .error-text {
@@ -116,12 +143,12 @@ input[type=submit] {
 }
 
 .option-group > input.hover::after {
-  color: var(--black);
+  color: var(--fg);
 }
 
 .option-group > input:checked::after {
   content: ">";
-  color: var(--black);
+  color: var(--fg);
 }
 
 .form-input-group.invalid .option-group > input::after {
@@ -131,6 +158,7 @@ input[type=submit] {
 input[type=text] {
   border: none;
   outline: none;
+  padding: 0px;
 }
 
 input[type=text]:focus {
@@ -141,7 +169,11 @@ input[type=text]::placeholder {
   color: var(--grey-text);
 }
 
-input[type=text]::after {
+.text-input::before {
   content: ">";
-  margin-right: var(--gap-min);
+}
+
+.text-input {
+  display: flex;
+  gap: var(--gap-min);
 }
