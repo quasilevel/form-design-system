@@ -1,5 +1,6 @@
 .form-name, form {
   font-family: "Fira Code", monospace;
+  font-weight: normal;
 }
 
 input {
