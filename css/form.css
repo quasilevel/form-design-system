@@ -12,3 +12,13 @@ input {
   border: none;
   border-bottom: 2px dashed #BCBCBC;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input-group {
+  display: flex;
+  flex-direction: column;
+}
