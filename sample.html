@@ -9,25 +9,34 @@
 
       <div id="name" class="form-input-group">
         <label for="name-input">Name</label>
-        <input placeholder="Enter your full name" type="text" name="name" id="name-input">
+        <!--why the weird span? cuz CSS can't be fucking serious http://forums.mozillazine.org/viewtopic.php?f=25&t=291007&start=0&st=0&sk=t&sd=a-->
+        <span class="text-input">
+          <input placeholder="Enter your full name" type="text" name="name" id="name-input">
+        </span>
         <div class="error-text">Your name is required</div>
       </div>
 
       <div id="age" class="form-input-group invalid">
         <label for="age-input">Age</label>
-        <input placeholder="Enter your age" type="text" name="age" id="age-input">
+        <span class="text-input">
+          <input placeholder="Enter your age" type="text" name="age" id="age-input">
+        </span>
         <div class="error-text">Age should be a number</div>
       </div>
 
       <div id="email" class="form-input-group invalid">
         <label for="email-input">Email</label>
-        <input placeholder="Enter your email" type="text" name="email" id="email-input">
+        <span class="text-input">
+          <input placeholder="Enter your email" type="text" name="email" id="email-input">
+        </span>
         <div class="error-text">Email is not valid</div>
       </div>
 
       <div id="github" class="form-input-group">
         <label for="github-input">Github</label>
-        <input placeholder="Enter your Github User URL" type="text" name="github" id="github-input">
+        <span class="text-input">
+          <input placeholder="Enter your Github User URL" type="text" name="github" id="github-input">
+        </span>
         <div class="error-text">The github user doesn't exist</div>
       </div>
 
