@@ -23,9 +23,28 @@ const collectValue = name => {
   console.warn(`there's no supported input element in #${name}. Did you mistype the element ID?`)
 }
 
+const setInvalid = (name, message) => {
+  const inputGroup = document.querySelector(`#${name}`)
+  inputGroup.classList.add("invalid")
+
+  inputGroup.querySelector(".error-text").innerText = message
+}
+
+const unsetInvalid = name => document.querySelector(`#${name}`).classList.remove("invalid")
+
 const runValidators = async (name, ...validators) => {
   const value = collectValue(name)
-  console.log(value)
+  let errFlag = false
+  for (const validator of validators) {
+    try {
+      await validator(value, name)
+    } catch(err) {
+      errFlag = true
+      setInvalid(name, err.message)
+      break
+    }
+  }
+  !errFlag && unsetInvalid(name)
 }
 
 export const init = () => {
@@ -52,4 +71,8 @@ export const validate = (name, ...validators) => {
   input?.addEventListener("blur", async () => await runValidators(name, ...validators))
 }
 
-export const required = async () => console.log("required")
+export const required = (message) => async (value) => {
+  if (value.length === 0) {
+    throw new Error(message)
+  }
+}

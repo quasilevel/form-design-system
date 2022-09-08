@@ -105,7 +105,7 @@
 
       const requiredFields = ["name", "age", "email", "github", "gender", "morality", "languages"]
       
-      requiredFields.map(data => validate(data, required))
+      requiredFields.map(data => validate(data, required(`${data.charAt(0).toUpperCase() + data.slice(1)} is required`)))
     </script>
   </body>
 </html>
