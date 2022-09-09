@@ -123,10 +123,10 @@
 
     </form>
     <script type="module">
-      import { init, validator, required } from "./js/modules/forms.js"
+      import { init, validateOn, required } from "./js/modules/forms.js"
       init()
 
-      const validate = validator("change", "keyup")
+      const validate = validateOn("change", "keyup")
 
       const requiredFields = ["name", "github", "gender", "morality", "languages"]
       requiredFields.map(data => validate(data, required(`${data.charAt(0).toUpperCase() + data.slice(1)} is required`)))

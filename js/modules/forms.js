@@ -65,7 +65,7 @@ export const init = () => {
   })
 }
 
-export const validator = (...revalidateOn) => (name, ...validators) => {
+export const validateOn = (...revalidateOn) => (name, ...validators) => {
   if (validityMap.has(name)) {
     throw new Error(`Validator: re-adding validtors for ${name}`)
   }
