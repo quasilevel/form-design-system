@@ -66,6 +66,9 @@ export const init = () => {
 }
 
 export const validator = (...revalidateOn) => (name, ...validators) => {
+  if (validityMap.has(name)) {
+    throw new Error(`Validator: re-adding validtors for ${name}`)
+  }
   validityMap.set(name, validators)
   const input = document.querySelector(`#${name} input[type=text]`)
   input?.addEventListener("blur", async () => await runValidators(name, ...validators))
