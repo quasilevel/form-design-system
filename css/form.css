@@ -23,6 +23,20 @@
   --bg: #FFFFFF;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #FFFFFF;
+    --bg: #000000;
+    --grey: #606060;
+    --grey-text: #959595;
+  }
+}
+
+body {
+  color: var(--fg);
+  background: var(--bg);
+}
+
 .form-name, form {
   font-family: "Fira Code", monospace;
   font-weight: normal;
@@ -159,6 +173,8 @@ input[type=text] {
   border: none;
   outline: none;
   padding: 0px;
+  background: var(--bg);
+  color: var(--fg);
 }
 
 input[type=text]:focus {
