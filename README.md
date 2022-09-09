@@ -125,6 +125,7 @@ It is possible to add as many input/label pair in `.option-group`. for eg.
 </div>
 ```
 There's nothing to be changed in this component, simply put it as the last child in the form element.
+
 ---
 
 ### Validation
@@ -169,13 +170,17 @@ validate("age", async (value, _name) => {
 })
 ```
 The library will validate the user input against the function supplied by the user, if the it throws an error, the message will be shown to the user in the UI.
+
 ---
+
 Since making certain fields required is common validation, the library provides a `required` function. It can be used to set a validation with a custom message.
 ```js
 import { required } from "./js/modules/forms.js"
 validate("age", required("Please enter your age"))
 ```
+
 ---
+
 It is possible to provide as many validators to the validation library as the need maybe. For eg. to make age required and a number:
 ```js
 validate("age", required("Please enter your age"), async (value, _name) => {
@@ -190,8 +195,8 @@ The sample usage of the form is documented in `sample.html` which is live at htt
 
 ## Final Thoughts
 Before sending the PR ensure that:
-- [] The form is functional
-- [] The form has the OpenGraph meta tags, which can generated at [OpenGraph](https://opengraph.dev)
+- [ ] The form is functional
+- [ ] The form has the OpenGraph meta tags, which can be generated at [OpenGraph](https://opengraph.dev)
 
 ## Contributing
 To help us improve the experience of our forms, we urge you to make contributions to this repo. Here's what you can start with:
