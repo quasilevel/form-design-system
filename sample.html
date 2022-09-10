@@ -121,6 +121,8 @@
         <button type="submit">Submit</button>
       </div>
 
+<!-- This Part is for Script---------------------------------  -->
+
     </form>
     <script type="module">
       import { init, validateOn, required } from "./js/modules/forms.js"
@@ -128,7 +130,7 @@
 
       const validate = validateOn("change", "keyup")
 
-      const requiredFields = ["name", "github", "gender", "morality", "languages"]
+      const requiredFields = ["name", "gender", "morality", "languages"]
       requiredFields.map(data => validate(data, required(`${data.charAt(0).toUpperCase() + data.slice(1)} is required`)))
 
       validate("age", required("Age is required"), async value => {
@@ -141,6 +143,13 @@
         const mailformat = /^[A-Za-z\d\.]+\@[A-Za-z]+\.[a-z]{2,3}$/
         if (!mailformat.test(value)) {
           throw new Error("Please enter a valid email")
+        }
+      })
+
+      validate("github", required("Github User Profile Link is required"), async value => {
+        const githubformat = /^https:+[//]+github.com+[/]/
+        if (!githubformat.test(value)) {
+          throw new Error("Please enter a valid Github User Profile.")
         }
       })
     </script>
