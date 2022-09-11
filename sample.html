@@ -147,7 +147,7 @@
       })
 
       validate("github", required("Github User Profile Link is required"), async value => {
-        const githubformat = /^[h][t][t][p](s?)[:][/][/]github\.com[/]|^github\.com[/]/
+        const githubformat = /^(?:https?:\/\/)?github\.com\/[a-zA-Z0-9_-]+$/
         if (!githubformat.test(value)) {
           throw new Error("Please enter a valid Github User Profile.")
         }
