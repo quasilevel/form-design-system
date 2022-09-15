@@ -63,21 +63,30 @@
       </div>
 
       <div id="github" class="form-input-group">
-        <label for="github-input">Github</label>
+        <label for="github-input">GitHub</label>
         <span class="text-input">
-          <input placeholder="Enter your Github User URL" type="text" name="github" id="github-input">
+          <input placeholder="Enter your GitHub Profile Link" type="text" name="github" id="github-input">
         </span>
-        <div class="error-text">The github user doesn't exist</div>
+        <div class="error-text">The github profile doesn't exist</div>
       </div>
 
       <div id="stream" class="form-input-group">
-        <label for="stream-input">Stream have in 12th</label>
-        <span class="text-input">
-          <input placeholder="Enter your Stream,ex.PCM+CS" type="text" name="stream" id="stream-input">
-        </span>
+        <label for="stream-input">Stream</label>
+        <div class="option-group">
+          <input type="radio" name="stream" id="stream-pcm" value="pcm">
+          <label for="stream-pcm">PCM</label>
+          <input type="radio" name="stream" id="stream-pcb" value="pcb">
+          <label for="stream-pcb">PCB</label>
+          <input type="radio" name="stream" id="stream-pcmb" value="pcmb">
+          <label for="stream-pcmb">PCMB</label>
+          <input type="radio" name="stream" id="stream-commerce" value="commerce">
+          <label for="stream-commerce">Commerce</label>
+          <input type="radio" name="stream" id="stream-humanities" value="humanities">
+          <label for="stream-humanities">Humanities</label>
+        </div>
         <div class="error-text">This can't be empty</div>
       </div>
-      
+
       <hr class="separator">
 
       <div id="languages" class="form-input-group">
@@ -115,18 +124,18 @@
           <label for="frameworks-javalin">Javalin</label>
           <input type="checkbox" name="frameworks" id="frameworks-spark" value="spark">
           <label for="frameworks-spark">Spark</label>
-          <input type="checkbox" name="frameworks" id="frameworks-angular" value="angular">
-          <label for="frameworks-angular">Angular</label>
-          <input type="checkbox" name="frameworks" id="frameworks-vue.js" value="vue.js">
-          <label for="frameworks-vue.js">Vue JS</label>
+          <input type="checkbox" name="frameworks" id="frameworks-expressjs" value="expressjs">
+          <label for="frameworks-expressjs">ExpressJS</label>
+          <input type="checkbox" name="frameworks" id="frameworks-vuejs" value="vuejs">
+          <label for="frameworks-vuejs">VueJS</label>
           <input type="checkbox" name="frameworks" id="frameworks-gin" value="gin">
           <label for="frameworks-gin">Gin</label>
           <input type="checkbox" name="frameworks" id="frameworks-beego" value="beego">
           <label for="frameworks-beego">Beego</label>
-          <input type="checkbox" name="frameworks" id="frameworks-.net" value=".net">
-          <label for="frameworks-.net">.NET</label>
-          <input type="checkbox" name="frameworks" id="frameworks-react js" value="react js">
-          <label for="frameworks-react js">React JS</label>
+          <input type="checkbox" name="frameworks" id="frameworks-net" value="net">
+          <label for="frameworks-net">.NET</label>
+          <input type="checkbox" name="frameworks" id="frameworks-reactjs" value="reactjs">
+          <label for="frameworks-reactjs">ReactJS</label>
           <input type="checkbox" name="frameworks" id="frameworks-spring" value="spring">
           <label for="frameworks-spring">Spring</label>
           <input type="checkbox" name="frameworks" id="frameworks-grails" value="grails">
@@ -135,6 +144,8 @@
           <label for="frameworks-django">Django</label>
           <input type="checkbox" name="frameworks" id="frameworks-flask" value="flask">
           <label for="frameworks-flask">Flask</label>
+          <input type="checkbox" name="frameworks" id="frameworks-others" value="others">
+          <label for="frameworks-others">Others</label>
         </div>
         <div class="error-text">Choose at least one framework</div>
       </div>
@@ -162,10 +173,10 @@
         }
       })
 
-      validate("github", required("Github User Profile Link is required"), async value => {
+      validate("github", required("GitHub Profile Link is required"), async value => {
         const githubformat = /^(?:https?:\/\/)?github\.com\/[a-zA-Z0-9_-]+$/
         if (!githubformat.test(value)) {
-          throw new Error("Please enter a valid Github User Profile.")
+          throw new Error("Please enter a valid GitHub Profile Link.")
         }
       })
     </script>
