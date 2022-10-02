@@ -13,14 +13,22 @@
   --gap-max: calc(var(--input-text-size) * 2);
   --gap-min: calc(var(--input-text-size) * (4 / 16));
   --label-text-size: calc(var(--input-text-size) * (12 / 16));
-  --submit-pad-h: calc(var(--input-text-size));
-  --submit-pad-v: calc(var(--input-text-size) * (12 / 16));
+  --submit-pad-h: calc(var(--input-text-size) * (9 / 16));
+  --submit-pad-v: calc(var(--input-text-size) * (7 / 16));
   
   --red: #F67171;
   --grey: #BCBCBC;
   --grey-text: #575757;
   --fg: #000000;
   --bg: #FFFFFF;
+}
+
+@media (max-width: 767.98px) {
+  :root {
+    --input-text-size: 1em;
+    --submit-pad-h: calc(var(--input-text-size));
+    --submit-pad-v: calc(var(--input-text-size) * (12 / 16));
+  }
 }
 
 @media (prefers-color-scheme: dark) {
