@@ -1,157 +1,160 @@
 <html>
-  <head>
-    
-    <!-- HTML Meta Tags -->
-    <title>PI Club | Sample Form</title>
-    <meta name="description" content="Check out the sample form built by the PI Club for alpha testing!">
 
-    <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://forms.pi-club.ml/sample">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="PI Club | Sample Form">
-    <meta property="og:description" content="Check out the sample form built by the PI Club for alpha testing!">
-    <meta property="og:image" content="https://pi-club.ml/logos/main.png">
+<head>
 
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="forms.pi-club.ml">
-    <meta property="twitter:url" content="https://forms.pi-club.ml/sample">
-    <meta name="twitter:title" content="PI Club | Sample Form">
-    <meta name="twitter:description" content="Check out the sample form built by the PI Club for alpha testing!">
-    <meta name="twitter:image" content="https://pi-club.ml/logos/main.png">
+  <!-- HTML Meta Tags -->
+  <title>PI Club | Sample Form</title>
+  <meta name="description" content="Check out the sample form built by the PI Club for alpha testing!">
 
-    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://forms.pi-club.ml/sample">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PI Club | Sample Form">
+  <meta property="og:description" content="Check out the sample form built by the PI Club for alpha testing!">
+  <meta property="og:image" content="https://pi-club.ml/logos/main.png">
 
-    <link rel="stylesheet" href="./css/form.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="forms.pi-club.ml">
+  <meta property="twitter:url" content="https://forms.pi-club.ml/sample">
+  <meta name="twitter:title" content="PI Club | Sample Form">
+  <meta name="twitter:description" content="Check out the sample form built by the PI Club for alpha testing!">
+  <meta name="twitter:image" content="https://pi-club.ml/logos/main.png">
+
+  <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+
+  <link rel="stylesheet" href="./css/form.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
 
 
-    <style>
+  <style>
+    body {
+      padding: 15vh 15vw;
+    }
+
+    @media (max-width: 400px) {
       body {
-        padding: 15vh 15vw;
+        padding: 5vh 5vw;
       }
+    }
+  </style>
+</head>
 
-      @media (max-width: 400px) {
-        body {
-          padding: 5vh 5vw;
-        }
+<body>
+  <form action="#" id="sample">
+    <h1 class="form-name">Form Name</h1>
+
+    <div id="name" class="form-input-group">
+      <label for="name-input">Name</label>
+      <!--why the weird span? cuz CSS can't be fucking serious http://forums.mozillazine.org/viewtopic.php?f=25&t=291007&start=0&st=0&sk=t&sd=a-->
+      <span class="text-input">
+        <input autofocus placeholder="Enter your full name" type="text" name="name" id="name-input">
+      </span>
+      <div class="error-text">Your name is required</div>
+    </div>
+
+    <div id="age" class="form-input-group">
+      <label for="age-input">Age</label>
+      <span class="text-input">
+        <input placeholder="Enter your age" type="text" name="age" id="age-input">
+      </span>
+      <div class="error-text">Age should be a number</div>
+    </div>
+
+    <div id="email" class="form-input-group">
+      <label for="email-input">Email</label>
+      <span class="text-input">
+        <input placeholder="Enter your email" type="text" name="email" id="email-input">
+      </span>
+      <div class="error-text">Email is not valid</div>
+    </div>
+
+    <div id="github" class="form-input-group">
+      <label for="github-input">Github</label>
+      <span class="text-input">
+        <input placeholder="Enter your Github User URL" type="text" name="github" id="github-input">
+      </span>
+      <div class="error-text">The github user doesn't exist</div>
+    </div>
+
+    <div id="gender" class="form-input-group">
+      <label for="gender-input">Gender</label>
+      <div class="option-group">
+        <input type="radio" name="gender" id="gender-male" value="male">
+        <label for="gender-male">Male</label>
+        <input type="radio" name="gender" id="gender-female" value="female">
+        <label for="gender-female">Female</label>
+      </div>
+      <div class="error-text">Choose a gender</div>
+    </div>
+
+    <hr class="separator">
+
+    <div id="morality" class="form-input-group">
+      <label for="morality-input">Morality</label>
+      <div class="option-group">
+        <input type="radio" name="morality" id="morality-good" value="good">
+        <label for="morality-good">Good</label>
+        <input type="radio" name="morality" id="morality-evil" value="evil">
+        <label for="morality-evil">Evil</label>
+      </div>
+      <div class="error-text">You can't morally grey</div>
+    </div>
+
+    <div id="languages" class="form-input-group">
+      <label for="languages-input">Languages</label>
+      <div class="option-group">
+        <input type="checkbox" name="languages" id="languages-golang" value="golang">
+        <label for="languages-golang">Golang</label>
+        <input type="checkbox" name="languages" id="languages-javascript" value="javascript">
+        <label for="languages-javascript">Javascript</label>
+        <input type="checkbox" name="languages" id="languages-typescript" value="typescript">
+        <label for="languages-typescript">Typescript</label>
+        <input type="checkbox" name="languages" id="languages-kotlin" value="kotlin">
+        <label for="languages-kotlin">Kotlin</label>
+      </div>
+      <div class="error-text">Choose at least one language</div>
+    </div>
+
+    <div id="submit" class="form-input-group">
+      <button type="submit">Submit</button>
+    </div>
+
+    <!-- This Part is for Script---------------------------------  -->
+
+  </form>
+  <script type="module">
+    import {init, validateOn, required} from "./js/modules/forms.js"
+    init()
+
+    const validate = validateOn("change", "keyup")
+
+    const requiredFields = ["name", "gender", "morality", "languages"]
+    requiredFields.map(data => validate(data, required(`${data.charAt(0).toUpperCase() + data.slice(1)} is required`)))
+
+    validate("age", required("Age is required"), async value => {
+      if (Number.isNaN(Number(value))) {
+        throw new Error("Age is should be a number")
       }
-    </style>
-  </head>
-  <body>
-    <form action="#" id="sample">
-      <h1 class="form-name">Form Name</h1>
+    })
 
-      <div id="name" class="form-input-group">
-        <label for="name-input">Name</label>
-        <!--why the weird span? cuz CSS can't be fucking serious http://forums.mozillazine.org/viewtopic.php?f=25&t=291007&start=0&st=0&sk=t&sd=a-->
-        <span class="text-input">
-          <input placeholder="Enter your full name" type="text" name="name" id="name-input">
-        </span>
-        <div class="error-text">Your name is required</div>
-      </div>
+    validate("email", required("Email is required"), async value => {
+      const mailformat = /^[A-Za-z\d\.]+\@[A-Za-z]+\.[a-z]{2,3}$/
+      if (!mailformat.test(value)) {
+        throw new Error("Please enter a valid email")
+      }
+    })
 
-      <div id="age" class="form-input-group">
-        <label for="age-input">Age</label>
-        <span class="text-input">
-          <input placeholder="Enter your age" type="text" name="age" id="age-input">
-        </span>
-        <div class="error-text">Age should be a number</div>
-      </div>
+    validate("github", required("Github User Profile Link is required"), async value => {
+      const githubformat = /^(?:https?:\/\/)?github\.com\/[a-zA-Z0-9_-]+$/
+      if (!githubformat.test(value)) {
+        throw new Error("Please enter a valid Github User Profile.")
+      }
+    })
+  </script>
+</body>
 
-      <div id="email" class="form-input-group">
-        <label for="email-input">Email</label>
-        <span class="text-input">
-          <input placeholder="Enter your email" type="text" name="email" id="email-input">
-        </span>
-        <div class="error-text">Email is not valid</div>
-      </div>
-
-      <div id="github" class="form-input-group">
-        <label for="github-input">Github</label>
-        <span class="text-input">
-          <input placeholder="Enter your Github User URL" type="text" name="github" id="github-input">
-        </span>
-        <div class="error-text">The github user doesn't exist</div>
-      </div>
-
-      <div id="gender" class="form-input-group">
-        <label for="gender-input">Gender</label>
-        <div class="option-group">
-          <input type="radio" name="gender" id="gender-male" value="male">
-          <label for="gender-male">Male</label>
-          <input type="radio" name="gender" id="gender-female" value="female">
-          <label for="gender-female">Female</label>
-        </div>
-        <div class="error-text">Choose a gender</div>
-      </div>
-
-      <hr class="separator">
-
-      <div id="morality" class="form-input-group">
-        <label for="morality-input">Morality</label>
-        <div class="option-group">
-          <input type="radio" name="morality" id="morality-good" value="good">
-          <label for="morality-good">Good</label>
-          <input type="radio" name="morality" id="morality-evil" value="evil">
-          <label for="morality-evil">Evil</label>
-        </div>
-        <div class="error-text">You can't morally grey</div>
-      </div>
-
-      <div id="languages" class="form-input-group">
-        <label for="languages-input">Languages</label>
-        <div class="option-group">
-          <input type="checkbox" name="languages" id="languages-golang" value="golang">
-          <label for="languages-golang">Golang</label>
-          <input type="checkbox" name="languages" id="languages-javascript" value="javascript">
-          <label for="languages-javascript">Javascript</label>
-          <input type="checkbox" name="languages" id="languages-typescript" value="typescript">
-          <label for="languages-typescript">Typescript</label>
-          <input type="checkbox" name="languages" id="languages-kotlin" value="kotlin">
-          <label for="languages-kotlin">Kotlin</label>
-        </div>
-        <div class="error-text">Choose at least one language</div>
-      </div>
-
-      <div id="submit" class="form-input-group">
-        <button type="submit">Submit</button>
-      </div>
-
-<!-- This Part is for Script---------------------------------  -->
-
-    </form>
-    <script type="module">
-      import { init, validateOn, required } from "./js/modules/forms.js"
-      init()
-
-      const validate = validateOn("change", "keyup")
-
-      const requiredFields = ["name", "gender", "morality", "languages"]
-      requiredFields.map(data => validate(data, required(`${data.charAt(0).toUpperCase() + data.slice(1)} is required`)))
-
-      validate("age", required("Age is required"), async value => {
-        if (Number.isNaN(Number(value))) {
-          throw new Error("Age is should be a number")
-        }
-      })
-
-      validate("email", required("Email is required"), async value => {
-        const mailformat = /^[A-Za-z\d\.]+\@[A-Za-z]+\.[a-z]{2,3}$/
-        if (!mailformat.test(value)) {
-          throw new Error("Please enter a valid email")
-        }
-      })
-
-      validate("github", required("Github User Profile Link is required"), async value => {
-        const githubformat = /^(?:https?:\/\/)?github\.com\/[a-zA-Z0-9_-]+$/
-        if (!githubformat.test(value)) {
-          throw new Error("Please enter a valid Github User Profile.")
-        }
-      })
-    </script>
-  </body>
 </html>
