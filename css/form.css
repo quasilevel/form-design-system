@@ -1,5 +1,5 @@
 :root {
-  --input-text-size: 1em;
+  --input-text-size: 1.3em;
 }
 
 @media (max-width: 767.98px) {
@@ -191,6 +191,7 @@ input[type=text]::placeholder {
 
 .text-input::before {
   content: ">";
+  font-size: var(--input-text-size);
 }
 
 .text-input {
