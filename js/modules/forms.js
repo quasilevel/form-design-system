@@ -1,6 +1,9 @@
 const validityMap = new Map()
 
-const collectValue = name => {
+// collectValue: (name: string): string | string[] | undefined
+// collectValue takes the name of the input field and returns the text value of that field for input[type=text],
+// or the selected value for input[type=radio], or the array of all the selected values for input[type=checkbox]
+export const collectValue = name => {
   const textInput = document.querySelector(`#${name} input[type=text]`)
   if (textInput !== null) {
     return textInput.value
@@ -21,6 +24,7 @@ const collectValue = name => {
   }
 
   console.warn(`there's no supported input element in #${name}. Did you mistype the element ID?`)
+  return undefined
 }
 
 const setInvalid = (name, message) => {
