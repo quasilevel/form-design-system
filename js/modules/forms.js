@@ -3,7 +3,7 @@ const validityMap = new Map()
 // collectValue: (name: string): string | string[] | undefined
 // collectValue takes the name of the input field and returns the text value of that field for input[type=text],
 // or the selected value for input[type=radio], or the array of all the selected values for input[type=checkbox]
-export const collectValue = name => {
+export const collectValue = (name) => {
   const textInput = document.querySelector(`#${name} input[type=text]`)
   if (textInput !== null) {
     return textInput.value
@@ -13,17 +13,19 @@ export const collectValue = name => {
   if (checkboxes.length !== 0) {
     return (
       Array.from(checkboxes)
-      .filter(box => box.checked)
-      .map(box => box.value)
+        .filter((box) => box.checked)
+        .map((box) => box.value)
     )
   }
 
   const radios = document.querySelectorAll(`#${name} input[type=radio]`)
   if (radios.length !== 0) {
-    return Array.from(radios).find(radio => radio.checked)?.value ?? ""
+    return Array.from(radios).find((radio) => radio.checked)?.value ?? ""
   }
 
-  console.warn(`there's no supported input element in #${name}. Did you mistype the element ID?`)
+  console.warn(
+    `there's no supported input element in #${name}. Did you mistype the element ID?`,
+  )
   return undefined
 }
 
@@ -34,38 +36,67 @@ const setInvalid = (name, message) => {
   inputGroup.querySelector(".error-text").innerText = message
 }
 
-const unsetInvalid = name => document.querySelector(`#${name}`).classList.remove("invalid")
+const unsetInvalid = (name) =>
+  document.querySelector(`#${name}`).classList.remove("invalid")
 
-const runValidators = async (name, ...validators) => {
+const checkIfValid = async (name, ...validators) => {
   const value = collectValue(name)
   let errFlag = false
   for (const validator of validators) {
     try {
       await validator(value, name)
-    } catch(err) {
+    } catch (err) {
       errFlag = true
       setInvalid(name, err.message)
       break
     }
   }
   !errFlag && unsetInvalid(name)
+
+  return !errFlag
 }
 
 export const init = () => {
-  document.querySelectorAll(".option-group > label").forEach(label => {
-    label.addEventListener("mouseenter", async () => {
+  document.querySelectorAll(".option-group > label").forEach((label) => {
+    label.addEventListener("mouseenter", () => {
       label.control.classList.add("hover")
     })
-    label.addEventListener("mouseleave", async () => {
+    label.addEventListener("mouseleave", () => {
       label.control.classList.remove("hover")
     })
   })
 
   document.querySelector("form").addEventListener("submit", async (e) => {
     e.preventDefault()
-    for (const [name, validators] of validityMap) {
-      runValidators(name, ...validators)
+
+    // run all the validators concurrently and finally check that all of them returned true
+    const isValid = (await Promise.all(
+      [...validityMap.entries()].map(([name, validators]) =>
+        checkIfValid(name, ...validators)
+      ),
+    )).reduce((valid, cur) => valid && cur, true)
+
+    if (!isValid) {
+      return
     }
+
+    const fields = Array.from(e.currentTarget.querySelectorAll("input")).map(
+      (it) => it.name,
+    )
+
+    const fd = fields.map((name) => [name, collectValue(name)]).reduce(
+      (fd, [name, value]) => {
+        fd.set(name, value)
+        return fd
+      },
+      new FormData(),
+    )
+    
+    // netlify will pick the request up and store its value in the forms backend
+    fetch("/", {
+      body: fd,
+      method: "POST"
+    })
   })
 }
 
@@ -75,18 +106,23 @@ export const validateOn = (...revalidateOn) => (name, ...validators) => {
   }
   validityMap.set(name, validators)
   const input = document.querySelector(`#${name} input[type=text]`)
-  input?.addEventListener("blur", async () => await runValidators(name, ...validators))
-
+  input?.addEventListener(
+    "blur",
+    async () => await checkIfValid(name, ...validators),
+  )
 
   // bad code, but something to get us started
-  revalidateOn.map(event => {
-    document.querySelectorAll(`#${name} input`).forEach(input => {
-      input.addEventListener(event, async () => await runValidators(name, ...validators))
+  revalidateOn.map((event) => {
+    document.querySelectorAll(`#${name} input`).forEach((input) => {
+      input.addEventListener(
+        event,
+        async () => await checkIfValid(name, ...validators),
+      )
     })
   })
 }
 
-export const required = (message) => async (value) => {
+export const required = (message) => (value) => {
   if (value.length === 0) {
     throw new Error(message)
   }

@@ -153,10 +153,19 @@
       <div id="submit" class="form-input-group">
         <button type="submit">Submit</button>
       </div>
-
-<!-- This Part is for Script---------------------------------  -->
-
+      
     </form>
+
+    <!-- a hidden dummy form required by netlify to detect our custom form: https://docs.netlify.com/forms/setup/#work-with-javascript-rendered-forms -->
+    <form netlify name="interview-form" value="Interview form" data-netlify="true" style="display: none;">
+      <input name="name">
+      <input name="email">
+      <input name="github">
+      <input name="stream">
+      <input name="languages">
+      <input name="frameworks">
+    </form>
+
     <script type="module">
       import { init, validateOn, required } from "./js/modules/forms.js"
       init()
