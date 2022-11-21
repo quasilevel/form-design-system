@@ -1,3 +1,4 @@
+import { showAlert } from "./alert.js"
 const validityMap = new Map()
 
 // collectValue: (name: string): string | string[] | undefined
@@ -93,10 +94,16 @@ export const init = () => {
     )
     
     // netlify will pick the request up and store its value in the forms backend
-    fetch("/", {
+    const res = await fetch("/", {
       body: fd,
       method: "POST"
     })
+    
+    const result = (res.status === 200)
+      ? "Your form was submitted successfully. You will be contacted shortly"
+      : "Your form submission failed. Try again later"
+    
+    showAlert(result)
   })
 }
 

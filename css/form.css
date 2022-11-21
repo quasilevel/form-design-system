@@ -45,6 +45,40 @@ body {
   background: var(--bg);
 }
 
+body.alert #overlay {
+  opacity: 1;
+}
+
+#overlay {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: grid;
+	place-items: center;
+  pointer-events: none;
+  opacity: 0;
+}
+
+#overlay > div {
+	border: var(--fg) 1px dashed;
+	padding: 1em;
+}
+
+#overlay #blink {
+	display: inline-block;
+	height: 1.2rem;
+	width: 1ch;
+	background: var(--fg);
+	transform: translateY(22%);
+	margin-left: 6px;
+}
+
+body.alert form {
+  display: none;
+}
+
 .form-name, form {
   font-family: "Fira Code", monospace;
   font-weight: normal;
