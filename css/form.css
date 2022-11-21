@@ -49,6 +49,12 @@ body.alert #overlay {
   opacity: 1;
 }
 
+@keyframes blink {
+  0% { opacity: 1 }
+  65% { opacity: 1 }
+  100% { opacity: 0 }
+}
+
 #overlay {
 	width: 100vw;
 	height: 100vh;
@@ -73,6 +79,7 @@ body.alert #overlay {
 	background: var(--fg);
 	transform: translateY(22%);
 	margin-left: 6px;
+  animation: blink 1.7s linear infinite;
 }
 
 body.alert form {
