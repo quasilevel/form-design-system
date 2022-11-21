@@ -77,7 +77,7 @@ body.alert #overlay {
 }
 
 #overlay #alert {
-  font-size: 1.15rem;
+  font-size: var(--input-text-size);
 }
 
 #overlay #blink {
