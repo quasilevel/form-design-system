@@ -87,7 +87,7 @@ export const init = () => {
 
     const fields = Array.from(e.currentTarget.querySelectorAll("input")).map(
       (it) => it.name,
-    )
+    ).filter(it => it !== "form-name")
 
     const fd = fields.map((name) => [name, collectValue(name)]).reduce(
       (fd, [name, value]) => {
@@ -96,6 +96,9 @@ export const init = () => {
       },
       new FormData(),
     )
+    
+    // netlify expects the form name
+    fd.set("form-name", e.currentTarget.querySelector("input[name=form-name]").value)
     
     // netlify will pick the request up and store its value in the forms backend
     const res = await fetch("/", {
