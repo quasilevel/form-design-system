@@ -69,6 +69,7 @@ export const init = () => {
 
   document.querySelector("form").addEventListener("submit", async (e) => {
     e.preventDefault()
+    const submit = e.currentTarget.querySelector("button")
 
     // run all the validators concurrently and finally check that all of them returned true
     const isValid = (await Promise.all(
@@ -80,6 +81,9 @@ export const init = () => {
     if (!isValid) {
       return
     }
+
+    submit.disabled = true
+    submit.innerText = "Submitting..."
 
     const fields = Array.from(e.currentTarget.querySelectorAll("input")).map(
       (it) => it.name,
