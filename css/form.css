@@ -1,5 +1,6 @@
 :root {
   --input-text-size: 1.3em;
+  --logo-size: 120px;
 }
 
 @media (max-width: 767.98px) {
@@ -43,6 +44,17 @@
 body {
   color: var(--fg);
   background: var(--bg);
+}
+
+#logo {
+	display: grid;
+	place-items: center;
+	max-height: var(--logo-size);
+  margin-bottom: 1rem;
+}
+
+#logo img {
+  max-height: var(--logo-size);
 }
 
 body.alert #overlay {
