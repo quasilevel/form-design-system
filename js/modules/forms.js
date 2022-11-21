@@ -98,7 +98,7 @@ export const init = () => {
     )
     
     // netlify expects the form name
-    fd.set("form-name", e.currentTarget.querySelector("input[name=form-name]").value)
+    fd.set("form-name", document.querySelector("input[name=form-name]").value)
     
     // netlify will pick the request up and store its value in the forms backend
     const res = await fetch("/", {
