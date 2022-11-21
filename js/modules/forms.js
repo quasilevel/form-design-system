@@ -106,7 +106,7 @@ export const init = () => {
       method: "POST"
     })
     
-    const newLine = (innerText <= 580) ? "\n" : " "
+    const newLine = (innerWidth <= 580) ? "\n" : " "
     const result = (res.status === 200)
       ? `Your form was submitted successfully.${newLine}You will be contacted shortly`
       : `Your form submission failed.${newLine}Try again later`
