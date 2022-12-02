@@ -182,8 +182,27 @@
     </div>
 
     <script type="module">
-      import { showAlert } from "./js/modules/alert.js"
-      showAlert("The interview form have been closed.")
+      import { init, validateOn, required } from "./js/modules/forms.js"
+      init()
+
+      const validate = validateOn("change", "keyup")
+
+      const requiredFields = ["name", "stream", "languages","frameworks"]
+      requiredFields.map(data => validate(data, required(`${data.charAt(0).toUpperCase() + data.slice(1)} is required`)))
+
+      validate("email", required("Email is required"), async value => {
+        const mailformat = /^[A-Za-z\d\.]+\@[A-Za-z]+\.[a-z]{2,3}$/
+        if (!mailformat.test(value)) {
+          throw new Error("Please enter a valid email")
+        }
+      })
+
+      validate("github", required("GitHub Profile Link is required"), async value => {
+        const githubformat = /^(?:https?:\/\/)?github\.com\/[a-zA-Z0-9_-]+$/
+        if (!githubformat.test(value)) {
+          throw new Error("Please enter a valid GitHub Profile Link.")
+        }
+      })
     </script>
   </body>
 </html>
