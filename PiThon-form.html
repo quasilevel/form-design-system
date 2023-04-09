@@ -3,9 +3,14 @@
 <head>
 
   <!-- HTML Meta Tags -->
-  <title>PI Club | Sample Form</title>
-  <meta name="description" content="Check out the sample form built by the PI Club for alpha testing!">
+  <title>PI Club | PiThon Form</title>
+  <meta name="description" content="Registeration for the Pithon by Pi Club">
 
+  <!--   Meta-Tags -->
+  
+  
+  
+  <!--   Meta-Tags Ends  -->
   <link rel="stylesheet" href="./css/form.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -164,7 +169,7 @@
     })
 
     validate("projectRepo", required("Project Repo Link is required"), async value => {
-      const linkFormat = /^(?:https?:\/\/)?github\.com\/[a-zA-Z0-9_-]+$/
+      const linkFormat = /^(?:https?:\/\/)?github\.com\/[a-zA-Z0-9_-]+$/[a-zA-Z0-9_-]+$/
       if (!linkFormat.test(value)) {
         throw new Error("Please enter a valid Project Repo.")
       }
