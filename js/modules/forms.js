@@ -142,3 +142,18 @@ export const required = (message) => (value) => {
     throw new Error(message)
   }
 }
+
+// This code is added by Karoshi Nara for PiThon Form
+validate("email", required("Email is required"), async value => {
+      const mailformat = /^[A-Za-z\d\.]+\@[A-Za-z]+\.[a-z]{2,3}$/
+      if (!mailformat.test(value)) {
+        throw new Error("Please enter a valid email")
+      }
+    })
+
+    validate("projectRepo", required("Project Repo Link is required"), async value => {
+      const linkFormat = /^(?:https?:\/\/)?github\.com\/[a-zA-Z0-9_-]+$\/[a-zA-Z0-9_-]+$/
+      if (!linkFormat.test(value)) {
+        throw new Error("Please enter a valid Project Repo.")
+      }
+    })
