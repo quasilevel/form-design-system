@@ -182,7 +182,7 @@
     })
 
     validate("projectRepo", required("Project Repo Link is required"), async value => {
-      const linkFormat = /^(?:https?:\/\/)?github\.com\/[a-zA-Z0-9_-]+$/[a-zA-Z0-9_-]+$/
+      const linkFormat = /^(?:https?:\/\/)?github\.com\/[a-zA-Z0-9_-]+$\/[a-zA-Z0-9_-]+$/
       if (!linkFormat.test(value)) {
         throw new Error("Please enter a valid Project Repo.")
       }
