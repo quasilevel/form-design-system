@@ -1,0 +1,199 @@
+<html>
+
+<head>
+
+  <!-- HTML Meta Tags -->
+  <title>PiThon Form [IDX1] | Join the hackathon now!</title>
+  <meta name="description"
+    content="Use this form to submit your entry for the PiThon [IDX1], a college wide hackathon conducted by the PI Club. Compete to build the better software!">
+
+  <meta rel="preconnect" content="https://pi-club.netlify.app">
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://forms-pi-club.netlify.app/pithon-form">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PiThon Form [IDX1] | Join the hackathon now!">
+  <meta property="og:description"
+    content="Use this form to submit your entry for the PiThon [IDX1], a college wide hackathon conducted by the PI Club. Compete to build the better software!">
+  <meta property="og:image" content="https://pi-club.netlify.app/assets/pithon/og_banner.png">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="forms-pi-club.netlify.app">
+  <meta property="twitter:url" content="https://forms-pi-club.netlify.app/pithon-form">
+  <meta name="twitter:title" content="PiThon Form [IDX1] | Join the hackathon now!">
+  <meta name="twitter:description"
+    content="Use this form to submit your entry for the PiThon [IDX1], a college wide hackathon conducted by the PI Club. Compete to build the better software!">
+  <meta name="twitter:image" content="https://pi-club.netlify.app/assets/pithon/og_banner.png">
+
+  <!-- Meta Tags Generated via https://opengraph.dev -->
+  <link rel="stylesheet" href="./css/form.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      padding: 15vh 15vw;
+    }
+
+    @media (max-width: 400px) {
+      body {
+        padding: 5vh 5vw;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="logo">
+    <picture>
+      <source srcset="https://pi-club.netlify.app/logos/white_on_black.svg" media="(prefers-color-scheme: dark )">
+      <img src="https://pi-club.netlify.app/logos/black_on_white.svg">
+    </picture>
+  </div>
+
+  <!--   <form action="#" id="sample"> -->
+  <form name="PiThon-form" method="POST" data-netlify="true">
+    <h1 class="form-name">PiThon Form</h1>
+    <!-- ----------------------------------------------------------------------------------------------------------------------- -->
+    <div id="projectName" class="form-input-group">
+      <label for="projectName-input">Project Name</label>
+      <span class="text-input">
+        <input autofocus placeholder="Enter your Project Name" type="text" name="projectName" id="projectName-input">
+      </span>
+      <div class="error-text">Project Name is Required!</div>
+    </div>
+    <!-- ----------------------------------------------------------------------------------------------------------------------- -->
+    <hr class="separator">
+    <div id="projectDescription" class="form-input-group">
+      <label for="projectDescription-input">Project Description</label>
+      <span class="text-input">
+        <input placeholder="Describe your project" type="text" name="projectDescription" id="projectDescription-input"
+          maxlength="120">
+      </span>
+      <div class="error-text">Project Description is Required!</div>
+    </div>
+    <!-- ----------------------------------------------------------------------------------------------------------------------- -->
+    <hr class="separator">
+    <div id="projectRepo" class="form-input-group">
+      <label for="projectRepo-input">Project Repo Link</label>
+      <span class="text-input">
+        <input placeholder="Enter your Project Repo URL" type="text" name="projectRepo" id="github-input">
+      </span>
+      <div class="error-text">Project Repo doesn't exist</div>
+    </div>
+    <!-- ----------------------------------------------------------------------------------------------------------------------- -->
+    <hr class="separator">
+    <div id="leaderName" class="form-input-group">
+      <label for="leaderName-input">Team Leader Name</label>
+      <caption>* If you are solo then write your name and leave Group Section blank.</caption>
+      <span class="text-input">
+        <input autofocus placeholder="Enter your Leader Name" type="text" name="leaderName" id="leaderName-input">
+      </span>
+      <div class="error-text">Name is required</div>
+    </div>
+
+    <div id="leaderYear" class="form-input-group">
+      <label for="year-input">Team Leader Year </label>
+      <div class="option-group">
+        <input type="radio" name="year" id="year-1st" value="Year-1">
+        <label for="year-1st">1st Year</label>
+        <input type="radio" name="year" id="year-2nd" value="Year-2">
+        <label for="year-2nd">2nd year</label>
+      </div>
+      <div class="error-text">Year is required</div>
+    </div>
+    <div id="email" class="form-input-group">
+      <label for="email-input">Team Leader Email</label>
+      <span class="text-input">
+        <input placeholder="Your Team Leader's Email" type="text" name="email" id="email-input">
+      </span>
+      <div class="error-text">Email is not valid</div>
+    </div>
+    <!-- ----------------------------------------------------------------------------------------------------------------------- -->
+    <hr class="separator">
+    <div id="teamMembers" class="form-input-group">
+      <label for="membersInput">Team Members Names</label>
+      <caption>* Each team is allowed to have two members besides the leader.</caption>
+
+      <br>
+      <label for="memberOneInput">Member 1</label>
+      <span class="text-input">
+        <input placeholder="Enter Member Name" type="text" id="memberOneInput" name="memberOne-input">
+      </span>
+      <div class="error-text">Year is required</div>
+
+      <br>
+      <label for="memberTwoInput">Member 2</label>
+      <span class="text-input">
+        <input placeholder="Enter Member Name" type="text" id="memberTwoInput" name="memberTwo-input">
+      </span>
+      <div class="error-text">Year is required</div>
+
+    </div>
+    <!-- ----------------------------------------------------------------------------------------------------------------------- -->
+    <hr class="separator">
+    <div id="languages" class="form-input-group">
+      <label for="languages-input">Languages</label>
+      <div class="option-group">
+        <input type="checkbox" name="languages" id="languages-python" value="python">
+        <label for="languages-python">Python</label>
+        <input type="checkbox" name="languages" id="languages-java" value="java">
+        <label for="languages-java">Java</label>
+        <input type="checkbox" name="languages" id="languages-golang" value="golang">
+        <label for="languages-golang">Golang</label>
+        <input type="checkbox" name="languages" id="languages-javascript" value="javascript">
+        <label for="languages-javascript">Javascript</label>
+        <input type="checkbox" name="languages" id="languages-typescript" value="typescript">
+        <label for="languages-typescript">Typescript</label>
+        <input type="checkbox" name="languages" id="languages-kotlin" value="kotlin">
+        <label for="languages-kotlin">Kotlin</label>
+        <input type="checkbox" name="languages" id="languages-other" value="other">
+        <label for="languages-other">Other</label>
+      </div>
+      <div class="error-text">Choose at least 1 language</div>
+    </div>
+    <!-- ----------------------------------------------------------------------------------------------------------------------- -->
+    <hr class="separator">
+    <div id="submit" class="form-input-group">
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+
+  <div id="overlay">
+    <div>
+      <pre>
+        <span id="blink"></span>
+      </pre>
+    </div>
+  </div>
+
+  <script type="module">
+    import {init, validateOn, required} from "./js/modules/forms.js"
+    init()
+
+    const validate = validateOn("change", "keyup")
+
+    const requiredFields = ["projectName", "projectDescription", "leaderName", "leaderYear", "languages"]
+    requiredFields.map(data => validate(data, required(`${data.charAt(0).toUpperCase() + data.slice(1)} is required`)))
+
+    validate("email", required("Email is required"), async value => {
+      const mailformat = /^[A-Za-z\d\.]+\@[A-Za-z]+\.[a-z]{2,3}$/
+      if (!mailformat.test(value)) {
+        throw new Error("Please enter a valid email")
+      }
+    })
+
+    validate("projectRepo", required("Project Repo Link is required"), async value => {
+      const linkFormat = /^(?:https?:\/\/)?github\.com\/[a-zA-Z0-9_-]+\/[a-zA-Z0-9_-]+/
+      if (!linkFormat.test(value)) {
+        throw new Error("Please enter a valid Project Repo.")
+      }
+    })
+  </script>
+</body>
+
+</html>

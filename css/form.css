@@ -13,7 +13,7 @@
   --form-name-size: calc(var(--input-text-size) * (20 / 16));
   --gap-max: calc(var(--input-text-size) * 2);
   --gap-min: calc(var(--input-text-size) * (4 / 16));
-  --label-text-size: calc(var(--input-text-size) * (12 / 16));
+  --label-text-size: calc(var(--input-text-size) * (15 / 16));
   --submit-pad-h: calc(var(--input-text-size) * (9 / 16));
   --submit-pad-v: calc(var(--input-text-size) * (7 / 16));
   
