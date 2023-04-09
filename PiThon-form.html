@@ -12,15 +12,17 @@
   <meta property="og:url" content="https://metatags.io/">
   <meta property="og:title" content="PiThon Form">
   <meta property="og:description" content="Registration for the Pithon by Pi Club">
-  <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+  <meta property="og:image"
+    content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://metatags.io/">
   <meta property="twitter:title" content="PiThon Form">
   <meta property="twitter:description" content="Registration for the Pithon by Pi Club">
-  <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
-  
+  <meta property="twitter:image"
+    content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
   <!--   Meta-Tags Ends  -->
   <link rel="stylesheet" href="./css/form.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,17 +47,17 @@
 </head>
 
 <body>
-    <div id="logo">
-        <picture>
-          <source srcset="./logo/logo-black.jpg" media="(prefers-color-scheme: dark )">
-          <img src="./logo/logo-white.jpg">
-        </picture>
-      </div>
+  <div id="logo">
+    <picture>
+      <source srcset="./logo/logo-black.jpg" media="(prefers-color-scheme: dark )">
+      <img src="./logo/logo-white.jpg">
+    </picture>
+  </div>
 
-<!--   <form action="#" id="sample"> -->
-    <form name="PiThon-form" method="POST" data-netlify="true">
+  <!--   <form action="#" id="sample"> -->
+  <form name="PiThon-form" method="POST" data-netlify="true">
     <h1 class="form-name">PiThon Form</h1>
-<!-- ----------------------------------------------------------------------------------------------------------------------- -->
+    <!-- ----------------------------------------------------------------------------------------------------------------------- -->
     <div id="projectName" class="form-input-group">
       <label for="projectName-input">Project Name</label>
       <span class="text-input">
@@ -63,81 +65,75 @@
       </span>
       <div class="error-text">Project Name is Required!</div>
     </div>
-<!-- ----------------------------------------------------------------------------------------------------------------------- -->
+    <!-- ----------------------------------------------------------------------------------------------------------------------- -->
     <hr class="separator">
     <div id="projectDescription" class="form-input-group">
       <label for="projectDescription-input">Project Description</label>
       <span class="text-input">
-        <input placeholder="Describe your project" type="text" name="projectDescription" id="projectDescription-input" maxlength="120"> 
+        <input placeholder="Describe your project" type="text" name="projectDescription" id="projectDescription-input"
+          maxlength="120">
       </span>
       <div class="error-text">Project Description is Required!</div>
     </div>
-<!-- ----------------------------------------------------------------------------------------------------------------------- -->
+    <!-- ----------------------------------------------------------------------------------------------------------------------- -->
     <hr class="separator">
     <div id="projectRepo" class="form-input-group">
-        <label for="projectRepo-input">Project Repo Link</label>
-        <span class="text-input">
-          <input placeholder="Enter your Project Repo URL" type="text" name="projectRepo" id="github-input">
-        </span>
-        <div class="error-text">Project Repo doesn't exist</div>
+      <label for="projectRepo-input">Project Repo Link</label>
+      <span class="text-input">
+        <input placeholder="Enter your Project Repo URL" type="text" name="projectRepo" id="github-input">
+      </span>
+      <div class="error-text">Project Repo doesn't exist</div>
     </div>
-<!-- ----------------------------------------------------------------------------------------------------------------------- -->
+    <!-- ----------------------------------------------------------------------------------------------------------------------- -->
     <hr class="separator">
     <div id="leaderName" class="form-input-group">
-        <label for="leaderName-input">Team Leader Name</label>
-        <caption>* If you are solo then write your name and leave Group Section blank.</caption>
-        <span class="text-input">
-          <input autofocus placeholder="Enter your Leader Name" type="text" name="leaderName" id="leaderName-input">
-        </span>
-        <div class="error-text">Name is required</div>
+      <label for="leaderName-input">Team Leader Name</label>
+      <caption>* If you are solo then write your name and leave Group Section blank.</caption>
+      <span class="text-input">
+        <input autofocus placeholder="Enter your Leader Name" type="text" name="leaderName" id="leaderName-input">
+      </span>
+      <div class="error-text">Name is required</div>
     </div>
 
     <div id="leaderYear" class="form-input-group">
-        <label for="year-input">Team Leader Year </label>
-        <div class="option-group">
-          <input type="radio" name="year" id="year-1st" value="Year-1">
-          <label for="year-1st">1st Year</label>
-          <input type="radio" name="year" id="year-2nd" value="Year-2">
-          <label for="year-2nd">2nd year</label>
-        </div>
-        <div class="error-text">Year is required</div>
+      <label for="year-input">Team Leader Year </label>
+      <div class="option-group">
+        <input type="radio" name="year" id="year-1st" value="Year-1">
+        <label for="year-1st">1st Year</label>
+        <input type="radio" name="year" id="year-2nd" value="Year-2">
+        <label for="year-2nd">2nd year</label>
+      </div>
+      <div class="error-text">Year is required</div>
     </div>
-<!-- ----------------------------------------------------------------------------------------------------------------------- -->
-    <hr class="separator">
     <div id="email" class="form-input-group">
-      <label for="email-input">Email</label>
-      <caption>* Enter the Email of Team Leader only</caption>
+      <label for="email-input">Team Leader Email</label>
       <span class="text-input">
         <input placeholder="Your Team Leader's Email" type="text" name="email" id="email-input">
       </span>
       <div class="error-text">Email is not valid</div>
     </div>
-<!-- ----------------------------------------------------------------------------------------------------------------------- -->
+    <!-- ----------------------------------------------------------------------------------------------------------------------- -->
     <hr class="separator">
     <div id="teamMembers" class="form-input-group">
-        <label for="membersInput">Team Members Names</label>
-        <caption>* Max Members: 3</caption>
-        <label for="memberOneInput">Member 1</label>
-        <span class="text-input">
-            <input placeholder="Enter Member Name" type="text" id="memberOneInput" name="memberOne-input">
-        </span>
-        <div class="error-text">Year is required</div>
+      <label for="membersInput">Team Members Names</label>
+      <caption>* Each team is allowed to have two members besides the leader.</caption>
 
-        <br>
-        <label for="memberTwoInput">Member 2</label>
-        <span class="text-input">
-            <input placeholder="Enter Member Name" type="text" id="memberTwoInput" name="memberTwo-input">
-        </span>
-        <div class="error-text">Year is required</div>
+      <br>
+      <label for="memberOneInput">Member 1</label>
+      <span class="text-input">
+        <input placeholder="Enter Member Name" type="text" id="memberOneInput" name="memberOne-input">
+      </span>
+      <div class="error-text">Year is required</div>
 
-        <br>
-        <label for="memberThreeInput">Member 3</label>
-        <span class="text-input">
-            <input placeholder="Enter Member Name" type="text" id="memberThreeInput" name="memberThree-input">
-        </span>
-        <div class="error-text">Year is required</div>
+      <br>
+      <label for="memberTwoInput">Member 2</label>
+      <span class="text-input">
+        <input placeholder="Enter Member Name" type="text" id="memberTwoInput" name="memberTwo-input">
+      </span>
+      <div class="error-text">Year is required</div>
+
     </div>
-<!-- ----------------------------------------------------------------------------------------------------------------------- -->
+    <!-- ----------------------------------------------------------------------------------------------------------------------- -->
     <hr class="separator">
     <div id="languages" class="form-input-group">
       <label for="languages-input">Languages</label>
@@ -159,20 +155,20 @@
       </div>
       <div class="error-text">Choose at least 1 language</div>
     </div>
-<!-- ----------------------------------------------------------------------------------------------------------------------- -->
+    <!-- ----------------------------------------------------------------------------------------------------------------------- -->
     <hr class="separator">
     <div id="submit" class="form-input-group">
       <button type="submit">Submit</button>
     </div>
   </form>
-   <script type="module">
+  <script type="module">
     import {init, validateOn, required} from "./js/modules/forms.js"
     init()
 
     const validate = validateOn("change", "keyup")
 
-    const requiredFields = ["projectName", "projectDescription", "projectRepo","leaderName", "leaderYear","email", "languages"]
-    requiredFields.map(data => validate(data, required(`${data.charAt(0).toUpperCase() + data.slice(1)} is required`))) 
+    const requiredFields = ["projectName", "projectDescription", "leaderName", "leaderYear", "languages"]
+    requiredFields.map(data => validate(data, required(`${data.charAt(0).toUpperCase() + data.slice(1)} is required`)))
 
     validate("email", required("Email is required"), async value => {
       const mailformat = /^[A-Za-z\d\.]+\@[A-Za-z]+\.[a-z]{2,3}$/
@@ -182,7 +178,7 @@
     })
 
     validate("projectRepo", required("Project Repo Link is required"), async value => {
-      const linkFormat = /^(?:https?:\/\/)?github\.com\/[a-zA-Z0-9_-]+$\/[a-zA-Z0-9_-]+$/
+      const linkFormat = /^(?:https?:\/\/)?github\.com\/[a-zA-Z0-9_-]+\/[a-zA-Z0-9_-]+/
       if (!linkFormat.test(value)) {
         throw new Error("Please enter a valid Project Repo.")
       }
