@@ -16,7 +16,7 @@
   --label-text-size: calc(var(--input-text-size) * (15 / 16));
   --submit-pad-h: calc(var(--input-text-size) * (9 / 16));
   --submit-pad-v: calc(var(--input-text-size) * (7 / 16));
-  
+
   --red: #F67171;
   --grey: #BCBCBC;
   --grey-text: #575757;
@@ -47,9 +47,9 @@ body {
 }
 
 #logo {
-	display: grid;
-	place-items: center;
-	max-height: var(--logo-size);
+  display: grid;
+  place-items: center;
+  max-height: var(--logo-size);
   margin-bottom: 1rem;
 }
 
@@ -62,26 +62,34 @@ body.alert #overlay {
 }
 
 @keyframes blink {
-  0% { opacity: 1 }
-  65% { opacity: 1 }
-  100% { opacity: 0 }
+  0% {
+    opacity: 1
+  }
+
+  65% {
+    opacity: 1
+  }
+
+  100% {
+    opacity: 0
+  }
 }
 
 #overlay {
-	width: 100vw;
-	height: 100vh;
-	position: fixed;
-	top: 0;
-	left: 0;
-	display: grid;
-	place-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
   pointer-events: none;
   opacity: 0;
 }
 
-#overlay > div {
-	border: var(--fg) 1px dashed;
-	padding: 1em;
+#overlay>div {
+  border: var(--fg) 1px dashed;
+  padding: 1em;
 }
 
 #overlay pre {
@@ -93,12 +101,12 @@ body.alert #overlay {
 }
 
 #overlay #blink {
-	display: inline-block;
-	height: 1rem;
-	width: 1ch;
-	background: var(--fg);
-	transform: translateY(22%);
-	margin-left: 2px;
+  display: inline-block;
+  height: 1rem;
+  width: 1ch;
+  background: var(--fg);
+  transform: translateY(22%);
+  margin-left: 2px;
   margin-top: calc(-22/100 * 1rem);
   animation: blink 1.7s linear infinite;
 }
@@ -107,7 +115,8 @@ body.alert form {
   display: none;
 }
 
-.form-name, form {
+.form-name,
+form {
   font-family: "Fira Code", monospace;
   font-weight: normal;
 }
@@ -120,7 +129,10 @@ input {
   appearance: none;
 }
 
-.option-group > label, input, .error-text, button[type=submit] {
+.option-group>label,
+input,
+.error-text,
+button[type=submit] {
   font-size: var(--input-text-size);
 }
 
@@ -143,16 +155,16 @@ form {
   gap: var(--gap-min);
 }
 
-.form-input-group > label {
+.form-input-group>label {
   font-size: var(--label-text-size);
 }
 
-.form-input-group > label::after {
+.form-input-group>label::after {
   content: "]";
   margin-left: var(--gap-min);
 }
 
-.form-input-group > label::before {
+.form-input-group>label::before {
   content: "[";
   margin-right: var(--gap-min);
 }
@@ -209,33 +221,34 @@ button[type=submit]::after {
   gap: var(--gap-min);
 }
 
-.option-group > input {
+.option-group>input {
   margin: 0px;
 }
 
-.option-group > label {
+.option-group>label {
   cursor: pointer;
 }
 
-.option-group > input::after {
+.option-group>input::after {
   content: "|";
   color: var(--grey);
   display: inline-block;
   width: 0.58em;
-  transform: translateY(-2px); /* tested on firefox */
+  transform: translateY(-2px);
+  /* tested on firefox */
   text-align: center;
 }
 
-.option-group > input.hover::after {
+.option-group>input.hover::after {
   color: var(--fg);
 }
 
-.option-group > input:checked::after {
+.option-group>input:checked::after {
   content: ">";
   color: var(--fg);
 }
 
-.form-input-group.invalid .option-group > input::after {
+.form-input-group.invalid .option-group>input::after {
   color: var(--red);
 }
 
@@ -245,6 +258,7 @@ input[type=text] {
   padding: 0px;
   background: var(--bg);
   color: var(--fg);
+  width: 100%;
 }
 
 input[type=text]:focus {
