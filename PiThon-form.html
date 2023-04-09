@@ -174,12 +174,12 @@
     const requiredFields = ["projectName", "projectDescription", "projectRepo","leaderName", "leaderYear","email", "languages"]
     requiredFields.map(data => validate(data, required(`${data.charAt(0).toUpperCase() + data.slice(1)} is required`))) 
 
-    validate("email", required("Email is required"), async value => {
-      const mailformat = /^[A-Za-z\d\.]+\@[A-Za-z]+\.[a-z]{2,3}$/
-      if (!mailformat.test(value)) {
-        throw new Error("Please enter a valid email")
-      }
-    })
+//     validate("email", required("Email is required"), async value => {
+//       const mailformat = /^[A-Za-z\d\.]+\@[A-Za-z]+\.[a-z]{2,3}$/
+//       if (!mailformat.test(value)) {
+//         throw new Error("Please enter a valid email")
+//       }
+//     })
 
     validate("projectRepo", required("Project Repo Link is required"), async value => {
       const linkFormat = /^(?:https?:\/\/)?github\.com\/[a-zA-Z0-9_-]+$\/[a-zA-Z0-9_-]+$/
