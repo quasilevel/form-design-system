@@ -59,6 +59,7 @@
   <form name="PiThon-form" method="POST" data-netlify="true">
     <h1 class="form-name">PiThon Form</h1>
     <!-- ----------------------------------------------------------------------------------------------------------------------- -->
+    <label>Project Details</label>
     <div id="projectName" class="form-input-group">
       <label for="projectName-input">Project Name</label>
       <span class="text-input">
@@ -67,7 +68,6 @@
       <div class="error-text">Project Name is Required!</div>
     </div>
     <!-- ----------------------------------------------------------------------------------------------------------------------- -->
-    <hr class="separator">
     <div id="projectDescription" class="form-input-group">
       <label for="projectDescription-input">Project Description</label>
       <span class="text-input">
@@ -77,7 +77,6 @@
       <div class="error-text">Project Description is Required!</div>
     </div>
     <!-- ----------------------------------------------------------------------------------------------------------------------- -->
-    <hr class="separator">
     <div id="projectRepo" class="form-input-group">
       <label for="projectRepo-input">Project Repo Link</label>
       <span class="text-input">
@@ -87,9 +86,10 @@
     </div>
     <!-- ----------------------------------------------------------------------------------------------------------------------- -->
     <hr class="separator">
+    <label>Team Leader Details</label>
+    <caption>* Every team must have 1 Leader and optionally 2 Members</caption>
     <div id="leaderName" class="form-input-group">
       <label for="leaderName-input">Team Leader Name</label>
-      <caption>* If you are solo then write your name and leave Group Section blank.</caption>
       <span class="text-input">
         <input autofocus placeholder="Enter your Leader Name" type="text" name="leaderName" id="leaderName-input">
       </span>
@@ -97,15 +97,16 @@
     </div>
 
     <div id="leaderYear" class="form-input-group">
-      <label for="year-input">Team Leader Year </label>
+      <label for="leaderYear">Team Leader Year </label>
       <div class="option-group">
-        <input type="radio" name="year" id="year-1st" value="Year-1">
-        <label for="year-1st">1st Year</label>
-        <input type="radio" name="year" id="year-2nd" value="Year-2">
-        <label for="year-2nd">2nd year</label>
+        <input type="radio" name="leaderYear" id="leaderYear-1st" value="1st">
+        <label for="leaderYear-1st">1st Year</label>
+        <input type="radio" name="leaderYear" id="leaderYear-2nd" value="2nd">
+        <label for="leaderYear-2nd">2nd year</label>
       </div>
       <div class="error-text">Year is required</div>
     </div>
+
     <div id="email" class="form-input-group">
       <label for="email-input">Team Leader Email</label>
       <span class="text-input">
@@ -115,24 +116,22 @@
     </div>
     <!-- ----------------------------------------------------------------------------------------------------------------------- -->
     <hr class="separator">
-    <div id="teamMembers" class="form-input-group">
-      <label for="membersInput">Team Members Names</label>
-      <caption>* Each team is allowed to have two members besides the leader.</caption>
+    <label>Team Member Names (Optional)</label>
 
-      <br>
-      <label for="memberOneInput">Member 1</label>
+    <div id="member1" class="form-input-group">
+      <label for="member1-input">Member 1 Name</label>
       <span class="text-input">
-        <input placeholder="Enter Member Name" type="text" id="memberOneInput" name="memberOne-input">
+        <input placeholder="Enter name of the 1st member" type="text" name="member1" id="member1-input">
       </span>
-      <div class="error-text">Year is required</div>
+      <div class="error-text"></div>
+    </div>
 
-      <br>
-      <label for="memberTwoInput">Member 2</label>
+    <div id="member2" class="form-input-group">
+      <label for="member2-input">Member 2 Name</label>
       <span class="text-input">
-        <input placeholder="Enter Member Name" type="text" id="memberTwoInput" name="memberTwo-input">
+        <input placeholder="Enter name of the 2nd member" type="text" name="member2" id="member2-input">
       </span>
-      <div class="error-text">Year is required</div>
-
+      <div class="error-text"></div>
     </div>
     <!-- ----------------------------------------------------------------------------------------------------------------------- -->
     <hr class="separator">
